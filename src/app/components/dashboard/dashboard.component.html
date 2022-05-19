@@ -1,1 +1,22 @@
-<p>dashboard works!</p>
+<div class="container">
+  <!-- <p>Interpolación</p>
+  <p>{{ nombre }}</p> -->
+
+  <!-- <p>Property binding</p>
+  <img [src]="urlImagen" width="600" />
+
+  <input type="text" [placeholder]="textoEjemplo" [disabled]="isDisabled">
+
+  <p>Event binding</p> -->
+  <!-- <button (click)="cambiarNombre()">Click me!</button> -->
+  <!-- <button (click)="deshabilitarInput()">Disabled</button> -->
+
+  <!-- <br> -->
+
+  <!-- <p>@Input: Padre-Hijo</p> -->
+  <!-- <app-card [textCard]="nombre"></app-card> -->
+
+  <p>Two way data binding @Input - @Output</p>
+  <h2>{{ texto }}</h2>
+  <app-card [(nuevoTexto)]="texto"></app-card>
+</div>
