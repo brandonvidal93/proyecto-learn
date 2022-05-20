@@ -7,6 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() usuario: any;
   @Input() nuevoTexto!: string;
   @Output() nuevoTextoChange = new EventEmitter<string>();
 
