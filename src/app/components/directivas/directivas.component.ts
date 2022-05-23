@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-directivas',
@@ -9,42 +10,17 @@ export class DirectivasComponent implements OnInit {
   
   listaUsuarios: any[];
 
-  constructor() {
-    this.listaUsuarios = [
-      {
-        nombre: 'Juan',
-        apellido: 'Perez',
-        edad: 25
-      },
-      {
-        nombre: 'Pedro',
-        apellido: 'Gonzalez',
-        edad: 30
-      },
-      {
-        nombre: 'Maria',
-        apellido: 'Lopez',
-        edad: 35
-      },
-      {
-        nombre: 'Carlos',
-        apellido: 'Gomez',
-        edad: 40
-      },
-      {
-        nombre: 'Ana',
-        apellido: 'Martinez',
-        edad: 45
-      },
-      {
-        nombre: 'Juan',
-        apellido: 'Perez',
-        edad: 25
-      }
-    ];
+  constructor(private usuarioService: UsuarioService) {
+    this.listaUsuarios = [];
+    this.usuarioService.getUsuarios().subscribe(data => {
+      this.listaUsuarios = data;
+    });
   }
 
   ngOnInit(): void {
   }
 
+  // onChange(evento: string): void {
+  //   this.usuarioService.modificarTexto(evento);
+  // }
 }

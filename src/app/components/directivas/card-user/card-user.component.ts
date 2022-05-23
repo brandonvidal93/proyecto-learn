@@ -9,19 +9,22 @@ export class CardUserComponent implements OnInit {
 
   @Input() usuario: any;
   nombre: string;
-  apellido: string;
-  edad: number;
+  correo: string;
+  genero: string;
+  estado: string;
 
   constructor() {
     this.nombre = '';
-    this.apellido = '';
-    this.edad = 0;
+    this.correo = '';
+    this.genero = '';
+    this.estado = '';
   }
 
   ngOnInit(): void {
-    this.nombre = this.usuario.nombre;
-    this.apellido = this.usuario.apellido;
-    this.edad = this.usuario.edad;
+    this.nombre = this.usuario.name;
+    this.correo = this.usuario.email;
+    this.genero = this.usuario.gender;
+    this.estado = this.usuario.status;
   }
 
 }

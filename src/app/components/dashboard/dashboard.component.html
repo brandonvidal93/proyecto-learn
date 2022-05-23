@@ -17,6 +17,8 @@
   <!-- <app-card [textCard]="nombre"></app-card> -->
 
   <p>Two way data binding @Input - @Output</p>
-  <h2>{{ texto }}</h2>
+  <h2 *ngIf="toggle">{{ texto }}</h2>
+  <h3 style="color: red;" *ngIf="texto === ''">Por favor ingresa un texto</h3>
+  <button (click)="toggleClick()">Toggle</button>
   <app-card [(nuevoTexto)]="texto"></app-card>
 </div>

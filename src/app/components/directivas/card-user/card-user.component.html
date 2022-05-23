@@ -1,8 +1,10 @@
 <div class="card" style="width: 18rem;">
   <!-- <img src="..." class="card-img-top" alt="..."> -->
   <div class="card-body">
-    <h5 class="card-title">{{nombre}} {{apellido}}</h5>
-    <p class="card-text">{{edad}}</p>
+    <h5 class="card-title">{{nombre}}</h5>
+    <p class="card-text">{{correo}}</p>
+    <p class="card-text"><span [ngStyle]="{'color': genero === 'male' ? 'red' : 'blue'}">{{genero}}</span></p>
+    <p class="card-text"><span [ngClass]="estado === 'active' ? 'badge bg-success': 'badge bg-danger'">{{estado}}</span></p>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
 </div>

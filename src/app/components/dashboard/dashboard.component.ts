@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
   isDisabled: boolean;
   texto: string;
   texto2: string;
+  toggle: boolean; 
   
   constructor() {
     this.nombre = 'Brandon';
@@ -21,6 +22,7 @@ export class DashboardComponent implements OnInit {
     this.isDisabled = false;
     this.texto = 'Texto pasado al componente hijo';
     this.texto2 = 'Texto desde componente padre';
+    this.toggle = true;
   }
 
   ngOnInit(): void {
@@ -42,6 +44,8 @@ export class DashboardComponent implements OnInit {
     this.isDisabled = !this.isDisabled;
   }
 
-  
+  toggleClick(): void {
+    this.toggle = !this.toggle;
+  }
 
 }
