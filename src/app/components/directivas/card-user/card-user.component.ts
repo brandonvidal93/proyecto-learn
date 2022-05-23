@@ -8,23 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardUserComponent implements OnInit {
 
   @Input() usuario: any;
-  nombre: string;
-  correo: string;
-  genero: string;
-  estado: string;
+  id        : string;
+  nombre    : string;
 
   constructor() {
-    this.nombre = '';
-    this.correo = '';
-    this.genero = '';
-    this.estado = '';
+    this.id       = '';
+    this.nombre   = '';
   }
 
   ngOnInit(): void {
-    this.nombre = this.usuario.name;
-    this.correo = this.usuario.email;
-    this.genero = this.usuario.gender;
-    this.estado = this.usuario.status;
+    this.id       = this.usuario.id;
+    this.nombre   = this.usuario.name;
   }
 
 }

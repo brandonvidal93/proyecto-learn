@@ -16,6 +16,11 @@ export class UsuarioService {
     return this.http.get(URL);
   }
 
+  getUsuario(id: string): Observable<any> {
+    const URL = `https://gorest.co.in/public/v2/users/${id}`
+    return this.http.get(URL);
+  }
+
 //   modificarTexto(texto: string): void {
 //     this.nuevoTexto.next(texto);
 //   }

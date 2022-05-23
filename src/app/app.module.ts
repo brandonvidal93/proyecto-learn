@@ -12,6 +12,9 @@ import { CardComponent } from './components/dashboard/card/card.component';
 import { DirectivasComponent } from './components/directivas/directivas.component';
 import { CardUserComponent } from './components/directivas/card-user/card-user.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ListadoUsuariosComponent } from './components/directivas/listado-usuarios/listado-usuarios.component';
+import { UsuarioComponent } from './components/directivas/usuario/usuario.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
     CardComponent,
     DirectivasComponent,
     CardUserComponent,
-    InicioComponent
+    InicioComponent,
+    PageNotFoundComponent,
+    ListadoUsuariosComponent,
+    UsuarioComponent
   ],
   imports: [
     BrowserModule,
