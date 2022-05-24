@@ -9,15 +9,37 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ListadoUsuariosComponent implements OnInit {
 
   listaUsuarios: any[];
+  isLoad: boolean;
+  paginaActual: number;
+  totalPaginas: number;
 
   constructor(private usuarioService: UsuarioService) {
     this.listaUsuarios = [];
-    this.usuarioService.getUsuarios().subscribe(data => {
-      this.listaUsuarios = data;
-    });
+    this.isLoad = true;
+    this.paginaActual = 1;
+    this.totalPaginas = 1;
+    this.obtenerUsuarios();
   }
 
   ngOnInit(): void {
   }
 
+  paginaAnterior(): void {
+    this.paginaActual--;
+    this.obtenerUsuarios();
+  }
+
+  paginaSiguiente(): void {
+    this.paginaActual++;
+    this.obtenerUsuarios();
+  }
+  
+  obtenerUsuarios() :void {
+    this.usuarioService.getUsuarios(this.paginaActual).subscribe(data => {
+      this.isLoad = false;
+      this.listaUsuarios = data.data;
+      this.totalPaginas = data.meta.pagination.pages;
+      this.paginaActual = data.meta.pagination.page;
+    });
+  }
 }

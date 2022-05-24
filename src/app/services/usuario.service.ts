@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 export class UsuarioService {
   constructor(private http: HttpClient) { }
 
-  getUsuarios(): Observable<any> {
-    const URL = 'https://gorest.co.in/public/v2/users'
+  getUsuarios(pagina: number): Observable<any> {
+    const URL = `https://gorest.co.in/public/v1/users?page=${pagina}`;
     return this.http.get(URL);
   }
 
   getUsuario(id: string): Observable<any> {
-    const URL = `https://gorest.co.in/public/v2/users/${id}`
+    const URL = `https://gorest.co.in/public/v1/users/${id}`
     return this.http.get(URL);
   }
 }

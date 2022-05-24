@@ -13,6 +13,7 @@ export class UsuarioComponent implements OnInit {
   correo    : string;
   genero    : string;
   estado    : string;
+  isLoad    : boolean;
 
   constructor(private aRoute: ActivatedRoute, private usuarioService: UsuarioService ) {
     this.id = this.aRoute.snapshot.paramMap.get('id')!;
@@ -20,11 +21,13 @@ export class UsuarioComponent implements OnInit {
     this.correo   = '';
     this.genero   = '';
     this.estado   = '';
+    this.isLoad   = true;
     this.usuarioService.getUsuario(this.id).subscribe(data => {
-      this.nombre = data.name;
-      this.correo = data.email;
-      this.genero = data.gender;
-      this.estado = data.status;
+      this.isLoad = false;
+      this.nombre = data.data.name;
+      this.correo = data.data.email;
+      this.genero = data.data.gender;
+      this.estado = data.data.status;
     });
   }
 

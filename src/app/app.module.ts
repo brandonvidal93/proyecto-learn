@@ -15,6 +15,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ListadoUsuariosComponent } from './components/directivas/listado-usuarios/listado-usuarios.component';
 import { UsuarioComponent } from './components/directivas/usuario/usuario.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UsuarioComponent } from './components/directivas/usuario/usuario.compon
     InicioComponent,
     PageNotFoundComponent,
     ListadoUsuariosComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
